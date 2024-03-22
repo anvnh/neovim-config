@@ -69,7 +69,7 @@ vim.api.nvim_set_keymap('n', '<C-k>', '<cmd> TmuxNavigateLeft <CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<C-j>', '<cmd> TmuxNavigateLeft <CR>', { noremap = true, silent = true })
 
 -- nvim-tree
-vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>o', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true, desc="Toggle tree" })
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', { noremap = true, silent = true, desc="Refresh tree" })
 -- vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>NvimTreeFindFile<CR>', {noremap = true, silent = true})
 
@@ -88,4 +88,4 @@ vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>set nu!<CR>', { noremap = true, 
 vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>set rnu!<CR>', { noremap = true, silent = true, desc="Toggle relative line number"})
 
 -- formatting
-vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua vim.lsp.buf.formatting()<cr>', { silent = true, noremap = true, desc="Format" })
+vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({opt= {tabStop=4}})<CR>", {noremap = true, silent = true, desc="Format"})

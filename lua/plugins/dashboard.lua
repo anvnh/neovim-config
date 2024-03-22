@@ -51,6 +51,15 @@ return {
                             require("telescope.builtin").buffers()
                         end,
                     },
+                    {
+                        icon = "",
+                        desc = "  Open tree",
+                        key = "<leader> o",
+                        key_format = " [%s]",
+                        action = function()
+                            require("nvim-tree").toggle()
+                        end,
+                    }
 				},
 				footer = {
                 },
