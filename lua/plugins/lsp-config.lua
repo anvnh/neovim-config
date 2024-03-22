@@ -15,8 +15,8 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "biome",
-                    "clangd",
-                    "jdtls",
+                    -- "clangd",
+                    -- "jdtls",
                     "cssls",
                     "html",
                     "quick_lint_js",
