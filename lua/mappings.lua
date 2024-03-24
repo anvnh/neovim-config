@@ -45,6 +45,7 @@ vim.api.nvim_set_keymap('n', '<F2>', '<cmd>:w | :!g++ % && ./a.out<cr>', { norem
 -- goto definition
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {noremap = true, silent = true, desc = "Show hover"})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {noremap = true, silent = true, desc = "Goto definition"})
+vim.keymap.set('n', '<C-LeftMouse>', vim.lsp.buf.definition, { noremap = true, silent = true, desc="Goto definition" })
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, {})
