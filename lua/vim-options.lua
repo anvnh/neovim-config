@@ -1,22 +1,40 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
-vim.cmd("set number")
-vim.cmd("set relativenumber")
-vim.cmd("set autoindent")
-vim.cmd("set smartindent")
-vim.cmd("set cursorline")
-
---nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
+local opt = vim.opt
+local g = vim.g
 
 -- basic config
-vim.g.mapleader = " "
-vim.g.terminal_font = "Monospace 11"
-vim.opt.wrap = false;
+opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.number = true
+opt.relativenumber = true
+opt.autoindent = true
+opt.smartindent = true
+opt.cursorline = true
+opt.wrap = false
+opt.fillchars = { eob = " " }
+opt.ignorecase = true
+opt.smartcase = true
+opt.mouse = "a"
+opt.ruler = false
+opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
+opt.termguicolors = true
+opt.timeoutlen = 400
+opt.undofile = true
+opt.whichwrap:append "<>[]hl"
+
+g.mapleader = " "
+
+g.terminal_font = "Monospace 11"
+
+--nvim-tree
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+opt.termguicolors = true
+
+
 
 
 -- auto reload
