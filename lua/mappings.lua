@@ -70,7 +70,7 @@ vim.api.nvim_set_keymap('n', '<C-k>', '<cmd> TmuxNavigateLeft <CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<C-j>', '<cmd> TmuxNavigateLeft <CR>', { noremap = true, silent = true })
 
 -- nvim-tree
-vim.api.nvim_set_keymap('n', '<leader>o', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true, desc="Toggle tree" })
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true, desc="Toggle tree" })
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', { noremap = true, silent = true, desc="Refresh tree" })
 -- vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>NvimTreeFindFile<CR>', {noremap = true, silent = true})
 
@@ -90,3 +90,12 @@ vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>set rnu!<CR>', { noremap = true
 
 -- formatting
 vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({opt= {tabStop=4}})<CR>", {noremap = true, silent = true, desc="Format"})
+
+-- compiler
+    -- Open compiler
+vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+    -- Redo last selected option
+vim.api.nvim_set_keymap('n', '<S-F6>', "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
+  .. "<cmd>CompilerRedo<cr>", { noremap = true, silent = true })
+    -- Toggle compiler results
+vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })

@@ -54,7 +54,7 @@ return {
                     {
                         icon = "",
                         desc = "  Open tree",
-                        key = "<leader> o",
+                        key = "<leader> e",
                         key_format = " [%s]",
                         action = function()
                             require("nvim-tree").toggle()
