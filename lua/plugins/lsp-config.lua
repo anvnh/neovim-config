@@ -13,16 +13,16 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "lua_ls",
-                    "biome",
-                    "clangd",
-                    "jdtls",
-                    "cssls",
-                    "html",
-                    "quick_lint_js",
-                    "jedi_language_server",
-                    "tailwindcss",
-                    "tsserver",
+                    -- "lua_ls",
+                    -- "biome",
+                    -- "clangd",
+                    -- "jdtls",
+                    -- "cssls",
+                    -- "html",
+                    -- "quick_lint_js",
+                    -- "jedi_language_server",
+                    -- "tailwindcss",
+                    -- "tsserver",
                 }
             })
         end

@@ -99,3 +99,8 @@ vim.api.nvim_set_keymap('n', '<S-F6>', "<cmd>CompilerStop<cr>" -- (Optional, to 
   .. "<cmd>CompilerRedo<cr>", { noremap = true, silent = true })
     -- Toggle compiler results
 vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+
+
+
+-- leap vim 
+
