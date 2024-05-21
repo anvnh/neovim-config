@@ -1,4 +1,10 @@
--- basic
+local opts = { noremap = true, silent = true }
+
+--  ____    _    ____ ___ ____ 
+-- | __ )  / \  / ___|_ _/ ___|
+-- |  _ \ / _ \ \___ \| | |    
+-- | |_) / ___ \ ___) | | |___ 
+-- |____/_/   \_\____/___\____|
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { desc = "Window left" })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { desc = "Window right" })
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { desc = "Window down" })
@@ -10,7 +16,7 @@ vim.api.nvim_set_keymap('n', '<space>bl', '<Cmd>BufferOrderByLanguage<CR>', {})
 vim.api.nvim_set_keymap('n', '<space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', {})
 
 -- clear highlight
-vim.api.nvim_set_keymap('n', '<Esc>', '<Cmd>noh<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Esc>', '<Cmd>noh<CR>', opts)
 
 -- tab buffer
 vim.api.nvim_set_keymap('n', '<Tab>', '<Cmd>BufferNext<CR>', {})
@@ -19,22 +25,19 @@ vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>BufferClose<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>q', '<Cmd>BufferCloseAllButCurrent<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>p', '<Cmd>BufferPin<CR>', {})
 
--- close window
--- vim.api.nvim_set_keymap('n', '<leader>x', ':close<CR>', {noremap = true, silent = true})
-
 -- increase/decrease window size
-vim.api.nvim_set_keymap('n', '<C-Up>', '<Cmd>resize +2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-Down>', '<Cmd>resize -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Up>', '<Cmd>resize +2<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-Down>', '<Cmd>resize -2<CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<C-Right>', '<Cmd>vertical resize +5<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-Left>', '<Cmd>vertical resize -5<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Right>', '<Cmd>vertical resize +5<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-Left>', '<Cmd>vertical resize -5<CR>', opts)
 
 -- terminal
 -- vim.api.nvim_set_keymap('n', '<leader>f', '<Cmd>lua require("nvterm.terminal").toggle("float")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>h', '<Cmd>lua require("nvterm.terminal").toggle("horizontal")<CR>',
-    { noremap = true, silent = true })
+    opts)
 vim.api.nvim_set_keymap('n', '<leader>v', '<Cmd>lua require("nvterm.terminal").toggle("vertical")<CR>',
-    { noremap = true, silent = true })
+    opts)
 
 -- escape terminal mode
 vim.api.nvim_set_keymap('t', '<C-x>', '<C-\\><C-N>', { noremap = true, silent = true, desc="Exit terminal mode" })
@@ -64,10 +67,10 @@ vim.api.nvim_set_keymap('v', '<leader>/', '<ESC><cmd>lua require("Comment.api").
     { noremap = true, silent = true, desc="Comment selection lines" })
 
 -- tmux mappings
-vim.api.nvim_set_keymap('n', '<C-h>', '<cmd> TmuxNavigateLeft <CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-l>', '<cmd> TmuxNavigateLeft <CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '<cmd> TmuxNavigateLeft <CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<cmd> TmuxNavigateLeft <CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>', '<cmd> TmuxNavigateLeft <CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-l>', '<cmd> TmuxNavigateLeft <CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-k>', '<cmd> TmuxNavigateLeft <CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-j>', '<cmd> TmuxNavigateLeft <CR>', opts)
 
 -- nvim-tree
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { noremap = true, silent = true, desc="Toggle tree" })
@@ -75,11 +78,11 @@ vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', { noremap 
 -- vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>NvimTreeFindFile<CR>', {noremap = true, silent = true})
 
 -- moving window
-vim.api.nvim_set_keymap('n', '<A-l>', '<C-w>L', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-h>', '<C-w>H', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-j>', '<C-w>J', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-k>', '<C-w>K', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-t>', '<C-w>T', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-l>', '<C-w>L', opts)
+vim.api.nvim_set_keymap('n', '<A-h>', '<C-w>H', opts)
+vim.api.nvim_set_keymap('n', '<A-j>', '<C-w>J', opts)
+vim.api.nvim_set_keymap('n', '<A-k>', '<C-w>K', opts)
+vim.api.nvim_set_keymap('n', '<A-t>', '<C-w>T', opts)
 
 -- color picker
 vim.api.nvim_set_keymap('n', '<leader>cp', '<cmd> PickColor <CR>', { noremap = true, silent = true, desc="Pick color" })
@@ -91,16 +94,36 @@ vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>set rnu!<CR>', { noremap = true
 -- formatting
 vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({opt= {tabStop=4}})<CR>", {noremap = true, silent = true, desc="Format"})
 
--- compiler
-    -- Open compiler
-vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
-    -- Redo last selected option
+--   ____ ___  __  __ ____ ___ _     _____ ____  
+--  / ___/ _ \|  \/  |  _ \_ _| |   | ____|  _ \ 
+-- | |  | | | | |\/| | |_) | || |   |  _| | |_) |
+-- | |__| |_| | |  | |  __/| || |___| |___|  _ < 
+--  \____\___/|_|  |_|_|  |___|_____|_____|_| \_\
+
+-- Open compiler
+vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", opts)
+-- Redo last selected option
 vim.api.nvim_set_keymap('n', '<S-F6>', "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
-  .. "<cmd>CompilerRedo<cr>", { noremap = true, silent = true })
-    -- Toggle compiler results
-vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+    .. "<cmd>CompilerRedo<cr>", opts)
+-- Toggle compiler results
+vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", opts)
 
+-- __     _____ __  __   __  __  _____     _______ 
+-- \ \   / /_ _|  \/  | |  \/  |/ _ \ \   / / ____|
+--  \ \ / / | || |\/| | | |\/| | | | \ \ / /|  _|  
+--   \ V /  | || |  | | | |  | | |_| |\ V / | |___ 
+--    \_/  |___|_|  |_| |_|  |_|\___/  \_/  |_____|
 
+-- Normal-mode commands
+vim.keymap.set('n', '<A-j>', ':MoveLine(1)<CR>', opts)
+vim.keymap.set('n', '<A-k>', ':MoveLine(-1)<CR>', opts)
+vim.keymap.set('n', '<A-h>', ':MoveHChar(-1)<CR>', opts)
+vim.keymap.set('n', '<A-l>', ':MoveHChar(1)<CR>', opts)
+vim.keymap.set('n', '<leader>wf', ':MoveWord(1)<CR>', opts)
+vim.keymap.set('n', '<leader>wb', ':MoveWord(-1)<CR>', opts)
 
--- leap vim 
-
+-- Visual-mode commands
+vim.keymap.set('v', '<A-j>', ':MoveBlock(1)<CR>', opts)
+vim.keymap.set('v', '<A-k>', ':MoveBlock(-1)<CR>', opts)
+vim.keymap.set('v', '<A-h>', ':MoveHBlock(-1)<CR>', opts)
+vim.keymap.set('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)
