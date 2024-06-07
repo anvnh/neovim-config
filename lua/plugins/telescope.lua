@@ -9,6 +9,7 @@ return {
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, {noremap = true, silent = true, desc="Grep files"})
             vim.keymap.set('n', '<leader>fb', builtin.buffers, {noremap = true, silent = true, desc="List buffers"})
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, {noremap = true, silent = true, desc="Help tags"})
+            vim.keymap.set('n', '<leader>tt', builtin.colorscheme, {noremap = true, silent = true, desc = "Change colorscheme"})
         end
     },
     {

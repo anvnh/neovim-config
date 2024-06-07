@@ -18,7 +18,11 @@ vim.api.nvim_set_keymap('n', '<space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', 
 -- clear highlight
 vim.api.nvim_set_keymap('n', '<Esc>', '<Cmd>noh<CR>', opts)
 
--- tab buffer
+--  _____  _    ____    ____  _   _ _____ _____ _____ ____  
+-- |_   _|/ \  | __ )  | __ )| | | |  ___|  ___| ____|  _ \ 
+--   | | / _ \ |  _ \  |  _ \| | | | |_  | |_  |  _| | |_) |
+--   | |/ ___ \| |_) | | |_) | |_| |  _| |  _| | |___|  _ < 
+--   |_/_/   \_\____/  |____/ \___/|_|   |_|   |_____|_| \_\
 vim.api.nvim_set_keymap('n', '<Tab>', '<Cmd>BufferNext<CR>', {})
 vim.api.nvim_set_keymap('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>BufferClose<CR>', {})
@@ -34,16 +38,19 @@ vim.api.nvim_set_keymap('n', '<C-Left>', '<Cmd>vertical resize -5<CR>', opts)
 
 -- terminal
 -- vim.api.nvim_set_keymap('n', '<leader>f', '<Cmd>lua require("nvterm.terminal").toggle("float")<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>h', '<Cmd>lua require("nvterm.terminal").toggle("horizontal")<CR>',
-    opts)
-vim.api.nvim_set_keymap('n', '<leader>v', '<Cmd>lua require("nvterm.terminal").toggle("vertical")<CR>',
-    opts)
+vim.api.nvim_set_keymap('n', '<leader>h', '<Cmd>lua require("nvterm.terminal").toggle("horizontal")<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>v', '<Cmd>lua require("nvterm.terminal").toggle("vertical")<CR>', opts)
 
 -- escape terminal mode
 vim.api.nvim_set_keymap('t', '<C-x>', '<C-\\><C-N>', { noremap = true, silent = true, desc="Exit terminal mode" })
 
--- run files
-vim.api.nvim_set_keymap('n', '<F2>', '<cmd>:w | :!g++ % && ./a.out<cr>', { noremap = true, silent = true, desc="Compile and run C++ file" })
+--   ____            
+--  / ___| _     _   
+-- | |   _| |_ _| |_ 
+-- | |__|_   _|_   _|
+--  \____||_|   |_|  
+--                   
+vim.api.nvim_set_keymap('n', '<F2>', '<cmd>:w | :!g++ -std=c++17 % && ./a.out<cr>', { noremap = true, silent = true, desc="Compile and run C++ file" })
 
 -- goto definition
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {noremap = true, silent = true, desc = "Show hover"})

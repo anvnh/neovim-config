@@ -2,7 +2,7 @@ return {
   require("luasnip").snippet(
     { trig = "cpp" },
     {
-        t({ "#include <bits/stdc++.h>", 
+        t({ "#include <bits/stdc++.h>",
             "using namespace std;",
             "#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);",
             "#define ll long long",
@@ -41,7 +41,6 @@ return {
             "}",
         }),
     }),
-    
   require("luasnip").snippet(
     { trig = "ioi" },
     {
