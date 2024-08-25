@@ -10,6 +10,8 @@ return {
           { "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
         },
     },
+    config = function()
+        require('Comment').setup()
+    end,
     lazy = false,
-
 }

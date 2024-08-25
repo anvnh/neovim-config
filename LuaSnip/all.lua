@@ -5,7 +5,7 @@ return {
         t({
             "/**",
             "    Author: anvnh",
-            "    Created: " .. os.date("%Y-%m-%d %H:%M:%S"),
+            "    RyeNyn",
             "**/",
             "",
             "#include <bits/stdc++.h>",
@@ -18,7 +18,7 @@ return {
             "    for (const auto& element : t) { ",
             "        std::cout << element << \" \";",
             "    }",
-            "    std::cout << \"}\\n\";",
+            "    std::cout << std::endl;",
             "}",
             "",
             "#define ll long long",

@@ -28,6 +28,9 @@ vim.api.nvim_set_keymap('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>BufferClose<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>q', '<Cmd>BufferCloseAllButCurrent<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>p', '<Cmd>BufferPin<CR>', {})
+-- move buffer to the left/right
+vim.api.nvim_set_keymap('n', '<leader>mr', '<Cmd>BufferMovePrevious<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>ml', '<Cmd>BufferMoveNext<CR>', {})
 
 -- increase/decrease window size
 vim.api.nvim_set_keymap('n', '<C-Up>', '<Cmd>resize +2<CR>', opts)
@@ -134,3 +137,17 @@ vim.keymap.set('v', '<A-j>', ':MoveBlock(1)<CR>', opts)
 vim.keymap.set('v', '<A-k>', ':MoveBlock(-1)<CR>', opts)
 vim.keymap.set('v', '<A-h>', ':MoveHBlock(-1)<CR>', opts)
 vim.keymap.set('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)
+
+--  _____ _   _ _____ __  __ _____
+-- |_   _| | | | ____|  \/  | ____|
+--   | | | |_| |  _| | |\/| |  _|
+--   | | |  _  | |___| |  | | |___
+--   |_| |_| |_|_____|_|  |_|_____|
+--
+--  ______        _____ _____ ____ _   _ ___ _   _  ____
+-- / ___\ \      / /_ _|_   _/ ___| | | |_ _| \ | |/ ___|
+-- \___ \\ \ /\ / / | |  | || |   | |_| || ||  \| | |  _
+--  ___) |\ V  V /  | |  | || |___|  _  || || |\  | |_| |
+-- |____/  \_/\_/  |___| |_| \____|_| |_|___|_| \_|\____|
+vim.keymap.set('n', '<leader>tt', '<cmd> Themery <CR>', { noremap = true, silent = true, desc="Toggle theme" })
+
