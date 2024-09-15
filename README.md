@@ -1,12 +1,33 @@
-<ul>
-    <li>  
-        Installation via HTTPS: git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim <br/> 
-    </li>
-    <li>
-      Make sure to remove nvim folder in ~/.config. If you want to install without concerning, run this command: <br/> 
+<h1 align="center">
+  <br>
+  <a href="https://obsidian.md/"><img src="/images/neovim.png" alt="Neovim" width="200"></a>
+  <br>
+	Obsidian Notes
+  <br>
+</h1>
+
+<h4 align="center">Neovim config by anvnh</h4>
+
+<p align="center">
+  • <a href="#how-to-use">How To Use</a> •
+</p>
+
+## How To Use
+# Linux: 
+```sh
+git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
+```
+Make sure to remove nvim folder in ~/.config. If you want to install without concerning, run this command
+```sh
       sudo rm -rf ~/.config/nvim && git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
-    </li>
-    <li>
-        Requires nerd-fonts: sudo pacman -S $(pacman -Sgq nerd-fonts)
-    </li>
-</ul>
+```
+Requires nerd-fonts: 
+```sh
+sudo pacman -S $(pacman -Sgq nerd-fonts)
+```
+      
+## License
+
+MIT
+
+---
