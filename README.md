@@ -19,7 +19,7 @@ git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
 ```
 Make sure to remove nvim folder in ~/.config. If you want to install without concerning, run this command
 ```sh
-      sudo rm -rf ~/.config/nvim && git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
+sudo rm -rf ~/.config/nvim && git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
 ```
 Requires nerd-fonts: 
 ```sh
