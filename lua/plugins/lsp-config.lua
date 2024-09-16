@@ -19,15 +19,16 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "lua-language-server",
-                    "biome",
+                    "lua_ls",
                     "clangd",
+                    "biome",
                     "jdtls",
                     "cssls",
                     "html",
                     "quick_lint_js",
                     "jedi_language_server",
                     "tailwindcss",
+                    "ts_ls",
                 }
             })
         end
@@ -66,7 +67,7 @@ return {
             lspconfig.tailwindcss.setup({
                 capabilities = capabilities
             })
-            lspconfig.typescript.setup({
+            lspconfig.ts_ls.setup({
                 capabilities = capabilities
             })
 
