@@ -13,17 +13,13 @@
 </p>
 
 ## How To Use
-# Linux: 
-```sh
-git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
-```
-Make sure to remove nvim folder in ~/.config. If you want to install without concerning, run this command
+# Arch Linux: 
 ```sh
 sudo rm -rf ~/.config/nvim && git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
 ```
 Requires dependencies: 
 ```sh
-sudo pacman -S $(pacman -Sgq nerd-fonts) && sudo pacman -S $(pacman -Sgq nodejs) && sudo pacman -S npm
+sudo pacman -S $(pacman -Sgq nerd-fonts) && sudo pacman -S $(pacman -Sgq nodejs) && sudo pacman -S npm && sudo pacman -S unzip zip
 ```
 
 ## License
