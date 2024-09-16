@@ -9,6 +9,12 @@ return {
         end
     },
     {
+        "nvimdev/lspsaga.nvim",
+        config = function()
+            require("lspsaga").setup()
+        end
+    },
+    {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({

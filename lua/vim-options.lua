@@ -24,6 +24,7 @@ opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
 opt.whichwrap:append "<>[]hl"
+opt.scrolloff = 8
 
 g.mapleader = " "
 
