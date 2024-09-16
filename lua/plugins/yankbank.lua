@@ -7,7 +7,6 @@ return {
             sep = "------------------------------------------------------------------------",
             num_behavior = "jump",
             focus_gain_poll = true,
-            persist_type = "sqlite",
             keymaps = {
                 paste = "<CR>", -- enter
             },

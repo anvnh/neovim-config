@@ -21,11 +21,11 @@ Make sure to remove nvim folder in ~/.config. If you want to install without con
 ```sh
 sudo rm -rf ~/.config/nvim && git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
 ```
-Requires nerd-fonts: 
+Requires dependencies: 
 ```sh
-sudo pacman -S $(pacman -Sgq nerd-fonts)
+sudo pacman -S $(pacman -Sgq nerd-fonts) && sudo pacman -S $(pacman -Sgq nodejs) && sudo pacman -S npm
 ```
-      
+
 ## License
 
 MIT
