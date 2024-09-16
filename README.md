@@ -2,7 +2,7 @@
   <br>
   <a href="https://obsidian.md/"><img src="/images/neovim.png" alt="Neovim" width="200"></a>
   <br>
-	Obsidian Notes
+	Neovim config
   <br>
 </h1>
 
