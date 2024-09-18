@@ -47,13 +47,25 @@ vim.api.nvim_set_keymap('n', '<leader>v', '<Cmd>lua require("nvterm.terminal").t
 -- escape terminal mode
 vim.api.nvim_set_keymap('t', '<C-x>', '<C-\\><C-N>', { noremap = true, silent = true, desc="Exit terminal mode" })
 
---   ____            
---  / ___| _     _   
--- | |   _| |_ _| |_ 
--- | |__|_   _|_   _|
---  \____||_|   |_|  
---                   
-vim.api.nvim_set_keymap('n', '<F2>', '<cmd>:w | :!g++ -std=c++17 % && ./a.out<cr>', { noremap = true, silent = true, desc="Compile and run C++ file" })
+--  ____  _   _  ___  ____ _____ ____ _   _ _____
+-- / ___|| | | |/ _ \|  _ \_   _/ ___| | | |_   _|
+-- \___ \| |_| | | | | |_) || || |   | | | | | |
+--  ___) |  _  | |_| |  _ < | || |___| |_| | | |
+-- |____/|_| |_|\___/|_| \_\|_| \____|\___/  |_|
+vim.api.nvim_set_keymap('n', '<F1>', '<cmd>:w | :!g++ -std=c++17 % && ./a.out<cr>', { noremap = true, silent = true, desc="Compile and run C++ file" })
+
+--   ____ ___  ____  _____   ____  _   _ _   _ _   _ _____ ____
+--  / ___/ _ \|  _ \| ____| |  _ \| | | | \ | | \ | | ____|  _ \
+-- | |  | | | | | | |  _|   | |_) | | | |  \| |  \| |  _| | |_) |
+-- | |__| |_| | |_| | |___  |  _ <| |_| | |\  | |\  | |___|  _ <
+--  \____\___/|____/|_____| |_| \_\\___/|_| \_|_| \_|_____|_| \_\
+vim.keymap.set('n', '<F2>', ':RunCode<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rft', ':RunFile tab<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rp', ':RunProject<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
 
 -- goto definition
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {noremap = true, silent = true, desc = "Show hover"})

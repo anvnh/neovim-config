@@ -29,6 +29,7 @@ return {
                     "jedi_language_server",
                     "tailwindcss",
                     "ts_ls",
+                    "ast_grep",
                 }
             })
         end
@@ -70,7 +71,9 @@ return {
             lspconfig.ts_ls.setup({
                 capabilities = capabilities
             })
-
+            lspconfig.ast_grep.setup({
+                capabilities = capabilities
+            })
 
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
