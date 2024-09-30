@@ -32,12 +32,20 @@ vim.api.nvim_set_keymap('n', '<leader>p', '<Cmd>BufferPin<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>mr', '<Cmd>BufferMovePrevious<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>ml', '<Cmd>BufferMoveNext<CR>', {})
 
--- increase/decrease window size
-vim.api.nvim_set_keymap('n', '<C-Up>', '<Cmd>resize +2<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-Down>', '<Cmd>resize -2<CR>', opts)
-
-vim.api.nvim_set_keymap('n', '<C-Right>', '<Cmd>vertical resize +5<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-Left>', '<Cmd>vertical resize -5<CR>', opts)
+-- __        _____ _   _ ____   _____        __  ____ ___ __________
+-- \ \      / /_ _| \ | |  _ \ / _ \ \      / / / ___|_ _|__  / ____|
+--  \ \ /\ / / | ||  \| | | | | | | \ \ /\ / /  \___ \| |  / /|  _|
+--   \ V  V /  | || |\  | |_| | |_| |\ V  V /    ___) | | / /_| |___
+--    \_/\_/  |___|_| \_|____/ \___/  \_/\_/    |____/___/____|_____|
+-- vim.api.nvim_set_keymap('n', '<C-Up>', '<Cmd>resize +2<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C-Down>', '<Cmd>resize -2<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C-Right>', '<Cmd>vertical resize +5<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C-Left>', '<Cmd>vertical resize -5<CR>', opts)
+-- Bind window + shift + hjkl
+vim.api.nvim_set_keymap('n', '<C-S-A-K>', '<Cmd>resize +3<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-S-A-J>', '<Cmd>resize -3<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-S-A-H>', '<Cmd>vertical resize +5<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-S-A-L>', '<Cmd>vertical resize -5<CR>', opts)
 
 -- terminal
 -- vim.api.nvim_set_keymap('n', '<leader>f', '<Cmd>lua require("nvterm.terminal").toggle("float")<CR>', {noremap = true, silent = true})
@@ -67,7 +75,11 @@ vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = fa
 vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
 
--- goto definition
+--   ____  ___ _____ ___    ____  _____ _____ ___ _   _ ___ _____ ___ ___  _   _
+--  / ___|/ _ \_   _/ _ \  |  _ \| ____|  ___|_ _| \ | |_ _|_   _|_ _/ _ \| \ | |
+-- | |  _| | | || || | | | | | | |  _| | |_   | ||  \| || |  | |  | | | | |  \| |
+-- | |_| | |_| || || |_| | | |_| | |___|  _|  | || |\  || |  | |  | | |_| | |\  |
+--  \____|\___/ |_| \___/  |____/|_____|_|   |___|_| \_|___| |_| |___\___/|_| \_|
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {noremap = true, silent = true, desc = "Show hover"})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {noremap = true, silent = true, desc = "Goto definition"})
 vim.keymap.set('n', '<C-LeftMouse>', vim.lsp.buf.definition, { noremap = true, silent = true, desc="Goto definition" })
