@@ -28,14 +28,15 @@ opt.scrolloff = 8
 
 g.mapleader = " "
 
-g.terminal_font = "Monospace 11"
+-- g.terminal_font = "Monospace 11"
+g.terminal_font = "JetBrains Mono 12"
+
+-- g.indent_guides_enable_on_vim_startup = 1
 
 --nvim-tree
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 opt.termguicolors = true
-
-
 
 
 -- auto reload
