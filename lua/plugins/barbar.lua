@@ -7,11 +7,14 @@ return {
     config=function ()
         require("barbar").setup({
             animation = true,
+            auto_hide = 1,
             tabpages = true,
             clickable = true,
             highlight_visible = true,
 
-            icon = {
+            minimum_padding = 8,
+
+            icons = {
                 diagnostics = {
                     [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
                     [vim.diagnostic.severity.WARN] = {enabled = false},
@@ -27,6 +30,7 @@ return {
                 buffer_number = false,
                 button = '',
                 separator = {left = '▎', right = ''},
+                separator_at_end = true,
             },
             sidebar_filetypes = {
                 -- Use the default values: {event = 'BufWinLeave', text = '', align = 'left'}
@@ -41,7 +45,7 @@ return {
                 -- Or, specify all three
                 Outline = {event = 'BufWinLeave', text = 'symbols-outline', align = 'right'},
             },
-
+            -- letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
         })
     end
 }

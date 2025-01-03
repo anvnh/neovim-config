@@ -186,3 +186,21 @@ vim.keymap.set("n", "<leader>sg", function ()
   vim.fn.serverstart '127.0.0.1:6004'
 end, {noremap = true})
 
+--  _____ ___  ____   ___
+-- |_   _/ _ \|  _ \ / _ \
+--   | || | | | | | | | | |
+--   | || |_| | |_| | |_| |
+--   |_| \___/|____/ \___/
+-- vim.keymap.set("n", "]t", function()
+--     require("todo-comments").jump_next()
+-- end, { desc = "Next todo comment" })
+--
+-- vim.keymap.set("n", "[t", function()
+--     require("todo-comments").jump_prev()
+-- end, { desc = "Previous todo comment" })
+--
+-- vim.keymap.set("n", "]t", function()
+--     require("todo-comments").jump_next({keywords = { "ERROR", "WARNING" }})
+-- end, { desc = "Next error/warning todo comment" })
+
+vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<CR>", {noremap = true, silent = true, desc="Open todo telescope" })
