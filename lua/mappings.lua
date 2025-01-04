@@ -14,12 +14,6 @@ map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]ui
 vim.api.nvim_set_keymap('t', '<C-x>', '<C-\\><C-N>', create_desc 'Exit terminal mode')
 
 -- Tab buffer
--- vim.api.nvim_set_keymap('n', '<Tab>', '<Cmd>BufferNext<CR>', {})
--- vim.api.nvim_set_keymap('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', {})
--- vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>BufferClose<CR>', {})
--- vim.api.nvim_set_keymap('n', '<leader>q', '<Cmd>BufferCloseAllButCurrent<CR>', {})
--- vim.api.nvim_set_keymap('n', '<leader>p', '<Cmd>BufferPin<CR>', {})
-
 map('n', '<Tab>', ':lua require("nvchad.tabufline").next() <CR>', { noremap = true, silent = true })
 map('n', '<S-Tab>', ':lua require("nvchad.tabufline").prev() <CR>', { noremap = true, silent = true })
 map('n', '<leader>x', ':lua require("nvchad.tabufline").close_buffer() <CR>', { noremap = true, silent = true })
