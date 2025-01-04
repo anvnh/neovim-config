@@ -11,30 +11,30 @@ return {
         -- OPTIONAL:
         --   `nvim-notify` is only needed, if you want to use the notification view.
         --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
+        -- "rcarriga/nvim-notify",
     },
     config = function ()
-        require("notify").setup({
-                background_colour = "FloatShadow",
-                fps = 120,
-                icons = {
-                    DEBUG = "",
-                    ERROR = "",
-                    INFO = "",
-                    TRACE = "✎",
-                    WARN = ""
-                },
-                level = 2,
-                minimum_width = 50,
-                render = "minimal",
-                stages = "slide",
-                time_formats = {
-                    notification = "%T",
-                    notification_history = "%FT%T"
-                },
-                timeout = 2000,
-                top_down = false
-        })
+        -- require("notify").setup({
+        --         background_colour = "FloatShadow",
+        --         fps = 120,
+        --         icons = {
+        --             DEBUG = "",
+        --             ERROR = "",
+        --             INFO = "",
+        --             TRACE = "✎",
+        --             WARN = ""
+        --         },
+        --         level = 2,
+        --         minimum_width = 50,
+        --         render = "minimal",
+        --         stages = "slide",
+        --         time_formats = {
+        --             notification = "%T",
+        --             notification_history = "%FT%T"
+        --         },
+        --         timeout = 1000,
+        --         top_down = true
+        -- })
         require("noice").setup({
             lsp = {
                 -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -48,7 +48,7 @@ return {
             presets = {
                 bottom_search = true, -- use a classic bottom cmdline for search
                 command_palette = true, -- position the cmdline and popupmenu together
-                long_message_to_split = true, -- long messages will be sent to a split
+                long_message_to_split = false, -- long messages will be sent to a split
                 inc_rename = false, -- enables an input dialog for inc-rename.nvim
                 lsp_doc_border = false, -- add a border to hover docs and signature help
             },
@@ -63,18 +63,36 @@ return {
                 view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
             },
             -- CLEAN CMDLINE POP UP
-            -- views = {
-            --     cmdline_popup = {
-            --         border = {
-            --             style = "none",
-            --             padding = { 1, 1 },
-            --         },
-            --         filter_options = {},
-            --         win_options = {
-            --             winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-            --         },
-            --     },
-            -- },
+            views = {
+                cmdline_popup = {
+                    position = {
+                        row = "30%",
+                        col = "50%",
+                    },
+                    size = {
+                        width = 60,
+                        height = "auto",
+                    },
+                },
+                popupmenu = {
+                    relative = "editor",
+                    position = {
+                        row = 8,
+                        col = "50%",
+                    },
+                    size = {
+                        width = 60,
+                        height = 10,
+                    },
+                    border = {
+                        style = "single",
+                        padding = { 0, 1 },
+                    },
+                    win_options = {
+                        winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+                    },
+                },
+            },
         })
     end
 }
