@@ -23,10 +23,10 @@ map('n', '<leader>x', ':lua require("nvchad.tabufline").close_buffer() <CR>', { 
 -- require("nvchad.tabufline").closeBufs_at_direction("left") -- or right
 
 -- Window size
-vim.api.nvim_set_keymap('n', '<C-S-A-K>', '<Cmd>resize +3<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-S-A-J>', '<Cmd>resize -3<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-S-A-H>', '<Cmd>vertical resize +5<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-S-A-L>', '<Cmd>vertical resize -5<CR>', opts)
+api_map('n', '<C-S-A-K>', '<Cmd>resize +3<CR>', opts)
+api_map('n', '<C-S-A-J>', '<Cmd>resize -3<CR>', opts)
+api_map('n', '<C-S-A-H>', '<Cmd>vertical resize +5<CR>', opts)
+api_map('n', '<C-S-A-L>', '<Cmd>vertical resize -5<CR>', opts)
 
 api_map('n', 'gpd', "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", create_desc 'Preview [D]efinition')
 
