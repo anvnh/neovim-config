@@ -5,6 +5,31 @@ M.base46 = {
   transparency = true,
 }
 
+M.nvdash = {
+  load_on_startup = true,
+
+  header = {
+    '                            ',
+    '     ▄▄         ▄ ▄▄▄▄▄▄▄   ',
+    '   ▄▀███▄     ▄██ █████▀    ',
+    '   ██▄▀███▄   ███           ',
+    '   ███  ▀███▄ ███           ',
+    '   ███    ▀██ ███           ',
+    '   ███      ▀ ███           ',
+    '   ▀██ █████▄▀█▀▄██████▄    ',
+    '     ▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀▀▀   ',
+    '                            ',
+    '     Powered By anryn    ',
+    '                            ',
+  },
+
+  buttons = {
+    { txt = '  Find File', keys = 'Spc f f', cmd = 'Telescope find_files' },
+    { txt = '  Recent Files', keys = 'Spc f o', cmd = 'Telescope oldfiles' },
+    -- more... check nvconfig.lua file for full list of buttons
+  },
+}
+
 M.ui = {
   cmp = {
     lspkind_text = true,
@@ -13,7 +38,6 @@ M.ui = {
       tailwind = false,
     },
   },
-
   telescope = { style = 'borderless' }, -- borderless / bordered
   statusline = {
     theme = 'default', -- default/vscode/vscode_colored/minimal
@@ -33,7 +57,7 @@ M.ui = {
   },
   lsp = { signature = true },
   cheatsheet = {
-    theme = 'grid', -- simple/grid
+    theme = 'simple', -- simple/grid
     excluded_groups = { 'terminal (t)', 'autopairs', 'Nvim', 'Opens' }, -- can add group name or with mode
   },
   colorify = {

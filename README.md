@@ -19,7 +19,7 @@ sudo rm -rf ~/.config/nvim && git clone https://github.com/anvnh/neovim-config.g
 ```
 Requires dependencies: 
 ```sh
-sudo pacman -S $(pacman -Sgq nerd-fonts) && sudo pacman -S $(pacman -Sgq nodejs) && sudo pacman -S npm && sudo pacman -S unzip zip
+sudo pacman -S $(pacman -Sgq nerd-fonts) && sudo pacman -S $(pacman -Sgq nodejs) && sudo pacman -S npm && sudo pacman -S unzip zip sxiv imagemagick
 ```
 
 ## License
