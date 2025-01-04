@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://obsidian.md/"><img src="/images/neovim.png" alt="Neovim" width="200"></a>
+  <a href=""><img src="/images/neovim.png" alt="Neovim" width="150"></a>
   <br>
 	Neovim config
   <br>
@@ -9,11 +9,12 @@
 <h4 align="center">Neovim config by anvnh</h4>
 
 <p align="center">
-  • <a href="#how-to-use">How To Use</a> •
+  • <a href="#installation"> Installation </a> •
 </p>
 
-## How To Use
-# Arch Linux: 
+## Installation
+### Arch Linux:
+First, clone this repository:
 ```sh
 sudo rm -rf ~/.config/nvim && git clone https://github.com/anvnh/neovim-config.git -o origin ~/.config/nvim
 ```
