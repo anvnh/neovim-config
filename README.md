@@ -10,8 +10,8 @@
 
 <p align="center">
   • <a href="#installation"> Installation </a> •
-  • <a href="#post-installation"> Post installation </a> •
-  • <a href="#faq"> FAQ </a>
+  <a href="#post-installation"> Post installation </a> •
+  <a href="#faq"> FAQ </a> •
 </p>
 
 ## Installation
