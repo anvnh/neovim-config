@@ -1,4 +1,14 @@
+--  ____                     _
+-- | __ )  __ _ ___  ___  __| |
+-- |  _ \ / _` / __|/ _ \/ _` |
+-- | |_) | (_| \__ \  __/ (_| |
+-- |____/ \__,_|___/\___|\__,_|
 local opts = { noremap = true, silent = true }
+
+local function create_desc( desc ) -- Create a new opts table with a description
+  return vim.tbl_extend( 'force', opts, { desc = desc } )
+end
+
 
 --  ____    _    ____ ___ ____ 
 -- | __ )  / \  / ___|_ _/ ___|
@@ -15,7 +25,7 @@ vim.api.nvim_set_keymap('n', '<space>bd', '<Cmd>BufferOrderByDirectory<CR>', {})
 vim.api.nvim_set_keymap('n', '<space>bl', '<Cmd>BufferOrderByLanguage<CR>', {})
 vim.api.nvim_set_keymap('n', '<space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', {})
 
--- clear highlight
+-- Clear highlight
 vim.api.nvim_set_keymap('n', '<Esc>', '<Cmd>noh<CR>', opts)
 
 --  _____  _    ____    ____  _   _ _____ _____ _____ ____  
@@ -37,17 +47,12 @@ vim.api.nvim_set_keymap('n', '<leader>ml', '<Cmd>BufferMoveNext<CR>', {})
 --  \ \ /\ / / | ||  \| | | | | | | \ \ /\ / /  \___ \| |  / /|  _|
 --   \ V  V /  | || |\  | |_| | |_| |\ V  V /    ___) | | / /_| |___
 --    \_/\_/  |___|_| \_|____/ \___/  \_/\_/    |____/___/____|_____|
--- vim.api.nvim_set_keymap('n', '<C-Up>', '<Cmd>resize +2<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<C-Down>', '<Cmd>resize -2<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<C-Right>', '<Cmd>vertical resize +5<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<C-Left>', '<Cmd>vertical resize -5<CR>', opts)
--- Bind window + shift + hjkl
 vim.api.nvim_set_keymap('n', '<C-S-A-K>', '<Cmd>resize +3<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-S-A-J>', '<Cmd>resize -3<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-S-A-H>', '<Cmd>vertical resize +5<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-S-A-L>', '<Cmd>vertical resize -5<CR>', opts)
 
--- terminal
+-- Terminal
 -- vim.api.nvim_set_keymap('n', '<leader>f', '<Cmd>lua require("nvterm.terminal").toggle("float")<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>h', '<Cmd>lua require("nvterm.terminal").toggle("horizontal")<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>v', '<Cmd>lua require("nvterm.terminal").toggle("vertical")<CR>', opts)
@@ -203,4 +208,6 @@ end, {noremap = true})
 --     require("todo-comments").jump_next({keywords = { "ERROR", "WARNING" }})
 -- end, { desc = "Next error/warning todo comment" })
 
-vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<CR>", {noremap = true, silent = true, desc="Open todo telescope" })
+-- vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<CR>", {noremap = true, silent = true, desc="Open todo telescope" })
+vim.keymap.set("n", "<leader>td", "<cmd>TodoTelescope<CR>", create_desc( "TODO Telescope" ) )
+
