@@ -1,3 +1,6 @@
+-- put this in your main init.lua file ( before lazy setup )
+vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -11,9 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-require 'vim-options'
-require 'mappings'
-
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
@@ -25,6 +25,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+require 'vim-options'
+require 'mappings'
 require('lazy').setup({
   'tpope/vim-sleuth',
   {
@@ -431,3 +433,11 @@ require('lazy').setup({
     },
   },
 })
+
+-- dofile(vim.g.base46_cache .. 'defaults')
+-- dofile(vim.g.base46_cache .. 'statusline')
+-- dofile(vim.g.base46_cache .. 'syntax')
+-- dofile(vim.g.base46_cache .. 'treesitter')
+for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+  dofile(vim.g.base46_cache .. v)
+end
