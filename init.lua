@@ -108,12 +108,12 @@ require('lazy').setup({
       local builtin = require 'telescope.builtin'
 
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { noremap = true, silent = true, desc = '[F]ind [F]iles' })
-      vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { noremap = true, silent = true, desc = '[R]ecently opened files' })
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { noremap = true, silent = true, desc = '[G]rep [F]iles' })
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = true, desc = '[L]ist [B]uffers' })
+      vim.keymap.set('n', '<leader>ro', builtin.oldfiles, { noremap = true, silent = true, desc = '[R]ecently [O]pened files' })
+      vim.keymap.set('n', '<leader>gf', builtin.live_grep, { noremap = true, silent = true, desc = '[G]rep [F]iles' })
+      vim.keymap.set('n', '<leader>lb', builtin.buffers, { noremap = true, silent = true, desc = '[L]ist [B]uffers' })
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { noremap = true, silent = true, desc = '[H]elp [T]ags' })
 
-      vim.keymap.set('n', '<leader>cr', function()
+      vim.keymap.set('n', '<leader>sc', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
