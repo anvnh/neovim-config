@@ -4,7 +4,6 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'rafamadriz/friendly-snippets',
   },
-
   -- Snippet location
   config = function()
     require('luasnip.loaders.from_lua').load()
