@@ -1,8 +1,12 @@
 local opt = vim.opt
 local g = vim.g
-vim.g.have_nerd_font = true
+
+g.have_nerd_font = true
 
 opt.number = true
+
+-- Set laststatus=3
+opt.laststatus = 3
 
 opt.expandtab = true
 opt.tabstop = 4
@@ -74,4 +78,4 @@ opt.inccommand = 'split'
 opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 13
+opt.scrolloff = 10

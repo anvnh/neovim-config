@@ -2,7 +2,7 @@ local M = {}
 
 M.base46 = {
   theme = 'catppuccin',
-  transparency = true,
+  transparency = false,
 }
 
 M.nvdash = {
@@ -46,7 +46,6 @@ M.ui = {
     separator_style = 'default',
     order = nil,
     modules = nil,
-    global_status = true,
   },
   tabufline = {
     enabled = true,
