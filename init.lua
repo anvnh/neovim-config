@@ -9,6 +9,12 @@ autocmd('VimLeavePre', {
   command = ':silent !kitty @ set-spacing padding=20 margin=10',
 })
 
+-- Enable godothost for coding in godot
+local projectfile = vim.fn.getcwd() .. '/project.godot'
+if projectfile then
+  vim.fn.serverstart './godothost'
+end
+
 -- Restore cursor position when open file
 autocmd('BufReadPost', {
   pattern = '*',
