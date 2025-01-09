@@ -1,6 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
--- Dynamic terminal padding
+-- NOTE: Dynamic terminal padding
 autocmd('VimEnter', {
   command = ':silent !kitty @ set-spacing padding=0 margin=0',
 })
@@ -9,13 +9,13 @@ autocmd('VimLeavePre', {
   command = ':silent !kitty @ set-spacing padding=20 margin=10',
 })
 
--- Enable godothost for coding in godot
-local projectfile = vim.fn.getcwd() .. '/project.godot'
-if projectfile then
-  vim.fn.serverstart './godothost'
-end
+-- NOTE: Enable godothost for coding in godot
+-- local projectfile = vim.fn.getcwd() .. '/project.godot'
+-- if projectfile then
+--   vim.fn.serverstart './godothost'
+-- end
 
--- Restore cursor position when open file
+-- NOTE: Restore cursor position when open file
 autocmd('BufReadPost', {
   pattern = '*',
   callback = function()
@@ -26,17 +26,17 @@ autocmd('BufReadPost', {
   end,
 })
 
--- Show NvDash when all buffers are closed
-vim.api.nvim_create_autocmd('BufDelete', {
-  callback = function()
-    local bufs = vim.t.bufs
-    if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == '' then
-      vim.cmd 'Nvdash'
-    end
-  end,
-})
+--NOTE: Show NvDash when all buffers are closed
+-- vim.api.nvim_create_autocmd('BufDelete', {
+--   callback = function()
+--     local bufs = vim.t.bufs
+--     if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == '' then
+--       vim.cmd 'Nvdash'
+--     end
+--   end,
+-- })
 
--- Setting up base46 for NvUI
+-- NOTE: Setting up base46 for NvUI
 vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -52,18 +52,19 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Highlight when yanking (copying) text
+-- NOTE: Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  group = vim.api.nvim_create_augroup('kickstarthighlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.highlight.on_yank {}
   end,
 })
 
-require 'vim-options'
+require 'options'
 require 'mappings'
 require('lazy').setup({
   'tpope/vim-sleuth',
@@ -158,7 +159,7 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      -- `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
       'hrsh7th/cmp-nvim-lsp',
     },
@@ -280,6 +281,7 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        kotlin_language_server = {},
 
         lua_ls = {
           -- cmd = { ... },
@@ -312,6 +314,7 @@ require('lazy').setup({
         'ts_ls',
         'ast_grep',
         'eslint_d',
+        'kotlin_language_server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       require('mason-lspconfig').setup {

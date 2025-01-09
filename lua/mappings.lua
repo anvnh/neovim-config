@@ -6,12 +6,23 @@ end
 local map = vim.keymap.set
 local api_map = vim.api.nvim_set_keymap
 
+-- <leader>l to load the lazy plugin manager
+-- map('n', '<leader>l', '<cmd>Lazy<CR>', create_desc 'Load [L]azy plugin manager')
+
 -- Clear hightlight
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
--- map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
--- escape terminal mode
-vim.api.nvim_set_keymap('t', '<C-x>', '<C-\\><C-N>', create_desc 'Exit terminal mode')
+
+-- Increment/decrement
+map('n', '+', '<C-a>', opts)
+map('n', '-', '<C-x>', opts)
+
+-- Split window
+map('n', 'ss', ':split<CR>', opts)
+map('n', 'sv', ':vsplit<CR>', opts)
+
+-- Exit terminal mode
+api_map('t', '<C-x>', '<C-\\><C-N>', create_desc 'Exit terminal mode')
 
 -- Tab buffer
 map('n', '<Tab>', ':lua require("nvchad.tabufline").next() <CR>', { noremap = true, silent = true })
@@ -27,6 +38,9 @@ api_map('n', '<C-S-A-K>', '<Cmd>resize +3<CR>', opts)
 api_map('n', '<C-S-A-J>', '<Cmd>resize -3<CR>', opts)
 api_map('n', '<C-S-A-H>', '<Cmd>vertical resize +5<CR>', opts)
 api_map('n', '<C-S-A-L>', '<Cmd>vertical resize -5<CR>', opts)
+
+-- Rename
+map('n', '<leader>rn', ':IncRename ')
 
 api_map('n', 'gpd', "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", create_desc 'Preview [D]efinition')
 
@@ -45,8 +59,8 @@ api_map('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', create_desc 'Toggle tree [E
 api_map('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', create_desc 'Refresh tree [R]oot')
 
 -- Toggle line number
-api_map('n', '<leader>n', '<cmd>set nu!<CR>', create_desc 'Toggle line number')
-api_map('n', '<leader>rn', '<cmd>set rnu!<CR>', create_desc 'Toggle relative line number')
+api_map('n', '<leader>nu', '<cmd>set nu!<CR>', create_desc 'Toggle line number')
+api_map('n', '<leader>rnu', '<cmd>set rnu!<CR>', create_desc 'Toggle relative line number')
 
 -- MOVE
 -- Normal-mode commands
