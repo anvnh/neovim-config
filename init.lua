@@ -316,6 +316,9 @@ require('lazy').setup({
         'eslint_d',
         'kotlin_language_server',
       })
+
+      require('lspconfig').gdscript.setup {}
+
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       require('mason-lspconfig').setup {
         ensure_installed = {},
