@@ -9,10 +9,13 @@ opt.laststatus = 3
 vim.cmd [[let &t_Cs = "\e[4:3m]"]]
 vim.cmd [[let &t_Ce = "\e[4:0m]"]]
 
+-- Set up conceallevel to 1 or 2 in order to make obsidian nvim work
+opt.conceallevel = 1
+
 opt.expandtab = true
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.number = true
 opt.relativenumber = true
 opt.autoindent = true
@@ -65,4 +68,4 @@ opt.inccommand = 'split'
 -- Show which line your cursor is on
 opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 10
+opt.scrolloff = 15
