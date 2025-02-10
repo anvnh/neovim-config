@@ -20,7 +20,7 @@ Make sure neovim version is >= 0.8.0, otherwise this configuration may not work.
 
 ### Dependencies:
 External Requirements:
-- Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
+- Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`), tree-sister-cli for render latex (`sudo pacman -S tree-sitter-cli`)
 - ripgrep
 - Clipboard tool (xclip/xsel/win32yank or other depending on the platform)
 - Nerd fonts
@@ -36,7 +36,7 @@ External Requirements:
 Neovim's configurations are located under the following paths, depending on your OS:
 
 | OS | PATH |
-| :- | :--- |
+| :------------| :---------------------------------------- |
 | Linux, MacOS | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
 | Windows (cmd)| `%localappdata%\nvim\` |
 | Windows (powershell)| `$env:LOCALAPPDATA\nvim\` |

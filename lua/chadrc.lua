@@ -1,13 +1,14 @@
 local M = {}
 
 M.base46 = {
-  theme = 'catppuccin',
+  -- theme = 'catppuccin',
+  -- theme = 'gruvbox',
+  -- theme = 'github_dark',
   transparency = false,
 }
 
 M.nvdash = {
   load_on_startup = true,
-
   header = {
     '                            ',
     '     ▄▄         ▄ ▄▄▄▄▄▄▄   ',
@@ -46,6 +47,7 @@ M.ui = {
     separator_style = 'default',
     order = nil,
     modules = nil,
+    overrides = {},
   },
   tabufline = {
     enabled = true,

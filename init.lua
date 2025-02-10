@@ -9,6 +9,14 @@ autocmd('VimLeavePre', {
   command = ':silent !kitty @ set-spacing padding=20 margin=10',
 })
 
+-- Add this to your init.lua or relevant config file
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    vim.b.autoformat = false -- Disable autoformatting for markdown files
+  end,
+})
+
 -- NOTE: Enable godothost for coding in godot
 -- local projectfile = vim.fn.getcwd() .. '/project.godot'
 -- if projectfile then
@@ -38,6 +46,9 @@ autocmd('BufReadPost', {
 
 -- NOTE: Setting up base46 for NvUI
 vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'
+
+-- NOTE: :W and :w are the same
+vim.api.nvim_create_user_command('W', 'w', {})
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -316,8 +327,18 @@ require('lazy').setup({
         'eslint_d',
         'kotlin_language_server',
       })
+      local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       require('lspconfig').gdscript.setup {}
+      require('lspconfig').kotlin_language_server.setup {
+        filetypes = { 'kotlin', 'kt', 'kts' },
+        capabilities = cmp_capabilities, -- tell language server about completion capabilities
+      }
+
+      -- require('lspconfig').tailwindcss.setup {
+      --   filetypes_exclude = { 'markdown' }, -- Add this line
+      --   filetypes = { 'html', 'css', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' }, -- Explicitly list the filetypes you want
+      -- }
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       require('mason-lspconfig').setup {
@@ -441,9 +462,23 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'latex',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
+      autotag = { enable = true },
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.

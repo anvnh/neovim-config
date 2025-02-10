@@ -21,6 +21,9 @@ map('n', '-', '<C-x>', opts)
 map('n', 'ss', ':split<CR>', opts)
 map('n', 'sv', ':vsplit<CR>', opts)
 
+-- Ctrl - C acts as escape
+map('i', '<C-c>', '<ESC>', { noremap = true, silent = true })
+
 -- Exit terminal mode
 api_map('t', '<C-x>', '<C-\\><C-N>', create_desc 'Exit terminal mode')
 
@@ -34,10 +37,10 @@ map('n', '<leader>x', ':lua require("nvchad.tabufline").close_buffer() <CR>', { 
 -- require("nvchad.tabufline").closeBufs_at_direction("left") -- or right
 
 -- Window size
-api_map('n', '<C-S-A-K>', '<Cmd>resize +3<CR>', opts)
-api_map('n', '<C-S-A-J>', '<Cmd>resize -3<CR>', opts)
-api_map('n', '<C-S-A-H>', '<Cmd>vertical resize +5<CR>', opts)
-api_map('n', '<C-S-A-L>', '<Cmd>vertical resize -5<CR>', opts)
+api_map('n', '<C-S-A-Down>', '<Cmd>resize +3<CR>', opts)
+api_map('n', '<C-S-A-Up>', '<Cmd>resize -3<CR>', opts)
+api_map('n', '<C-S-A-Left>', '<Cmd>vertical resize +5<CR>', opts)
+api_map('n', '<C-S-A-Right>', '<Cmd>vertical resize -5<CR>', opts)
 
 -- Rename
 map('n', '<leader>rn', ':IncRename ')
@@ -97,3 +100,22 @@ api_map('n', '<leader>h', '<Cmd>lua require("nvterm.terminal").toggle("horizonta
 api_map('n', '<leader>v', '<Cmd>lua require("nvterm.terminal").toggle("vertical")<CR>', create_desc 'Toggle [V]ertical terminal')
 
 map('n', '<leader>td', '<cmd>TodoTelescope<CR>', create_desc '[T]o[D]o Explorer')
+
+--  ____  _   _  ___  ____ _____ ____ _   _ _____
+-- / ___|| | | |/ _ \|  _ \_   _/ ___| | | |_   _|
+-- \___ \| |_| | | | | |_) || || |   | | | | | |
+--  ___) |  _  | |_| |  _ < | || |___| |_| | | |
+-- |____/|_| |_|\___/|_| \_\|_| \____|\___/  |_|
+api_map('n', '<F1>', '<cmd>:w | :!g++ -std=c++17 % && ./a.out<cr>', { noremap = true, silent = true, desc = 'Compile and run C++ file' })
+
+-- vim.api.nvim_set_keymap('n', '<C-S-A->', '<Cmd>resize +3<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C-S-A-m>', '<Cmd>resize -3<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C-S-A-H>', '<Cmd>vertical resize +5<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C-S-A-L>', '<Cmd>vertical resize -5<CR>', opts)
+
+--  __  __            _       _
+-- |  \/  | __ _ _ __| | ____| | _____      ___ __
+-- | |\/| |/ _` | '__| |/ / _` |/ _ \ \ /\ / / '_ \
+-- | |  | | (_| | |  |   < (_| | (_) \ V  V /| | | |
+-- |_|  |_|\__,_|_|  |_|\_\__,_|\___/ \_/\_/ |_| |_|
+map('n', '<leader>pv', '<cmd>:Markview splitToggle<CR>', create_desc 'Toggle [P]review [V]iew')
