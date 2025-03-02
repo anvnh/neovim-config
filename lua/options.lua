@@ -13,9 +13,9 @@ vim.cmd [[let &t_Ce = "\e[4:0m]"]]
 opt.conceallevel = 1
 
 opt.expandtab = true
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.number = true
 opt.relativenumber = true
 opt.autoindent = true
@@ -34,8 +34,8 @@ opt.timeoutlen = 400
 opt.undofile = true
 opt.whichwrap:append '<>[]hl'
 opt.scrolloff = 8
--- opt.mouse = 'a'
-opt.mouse = ''
+opt.mouse = 'a'
+-- opt.mouse = ''
 opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
