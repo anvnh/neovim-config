@@ -5,7 +5,7 @@ M.base46 = {
   -- theme = 'gruvbox',
   -- theme = 'github_dark',
   -- transparency = false,
-  transparency = true,
+  -- transparency = true,
 }
 
 M.nvdash = {
@@ -33,6 +33,7 @@ M.nvdash = {
 }
 
 M.ui = {
+  winblend = 10,
   cmp = {
     lspkind_text = true,
     style = 'flat_dark', -- default/flat_light/flat_dark/atom/atom_colored

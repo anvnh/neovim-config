@@ -280,7 +280,16 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {
+          capabilities = capabilities,
+          settings = {
+            -- This is an example of how to override the default settings for the clangd LSP
+            --  You can find the default settings here: https://clangd.llvm.org/extra/clangd/Installation.html
+            --  And the LSP settings here: https://clangd.llvm.org/extra/clangd/Installation.html#configuration
+            --  For example, to disable the clangd diagnostics, you could add:
+            clangd = { diagnostics = { enabled = false } },
+          },
+        },
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},

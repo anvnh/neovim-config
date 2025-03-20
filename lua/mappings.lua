@@ -119,3 +119,16 @@ api_map('n', '<F1>', '<cmd>:w | :!g++ -std=c++17 % && ./a.out<cr>', { noremap = 
 -- | |  | | (_| | |  |   < (_| | (_) \ V  V /| | | |
 -- |_|  |_|\__,_|_|  |_|\_\__,_|\___/ \_/\_/ |_| |_|
 map('n', '<leader>pv', '<cmd>:Markview splitToggle<CR>', create_desc 'Toggle [P]review [V]iew')
+
+-- Code runner
+map('n', '<leader>rr', ':RunCode<CR>', { noremap = true, silent = false })
+map('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
+map('n', '<leader>rft', ':RunFile tab<CR>', { noremap = true, silent = false })
+map('n', '<leader>rp', ':RunProject<CR>', { noremap = true, silent = false })
+map('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = false })
+map('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
+map('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
+
+-- Copilot
+map('n', '<leader>cc', '<cmd> :CopilotChatOpen <CR>', create_desc '[C]opilot [C]hat')
+map('n', '<leader>cm', '<cmd> :CopilotChatModels<CR>', create_desc '[C]opilot [M]odels')
