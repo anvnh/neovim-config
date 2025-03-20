@@ -1,7 +1,7 @@
 local M = {}
 
 M.base46 = {
-  -- theme = 'catppuccin',
+  theme = 'catppuccin',
   -- theme = 'gruvbox',
   -- theme = 'github_dark',
   -- transparency = false,
