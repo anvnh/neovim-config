@@ -43,9 +43,10 @@ return {
     require('noice').setup {
       routes = {
         {
+          -- Find another text other the "no information available" in the notify event
           filter = {
             event = 'notify',
-            find = 'No information available',
+            find = 'No signature help available',
           },
           opts = { skip = true },
         },
@@ -78,12 +79,12 @@ return {
       views = {
         cmdline_popup = {
           position = {
-            -- row = '30%',
-            -- col = '50%',
+            row = '30%',
+            col = '50%',
             -- row = '9%',
             -- col = '50%',
-            row = '58%',
-            col = '50%',
+            -- row = '58%',
+            -- col = '50%',
           },
           size = {
             width = 60,
