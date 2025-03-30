@@ -132,3 +132,7 @@ map('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
 -- Copilot
 map('n', '<leader>cc', '<cmd> :CopilotChatOpen <CR>', create_desc '[C]opilot [C]hat')
 map('n', '<leader>cm', '<cmd> :CopilotChatModels<CR>', create_desc '[C]opilot [M]odels')
+
+-- Flutter
+map('n', '<leader>fr', '<cmd> :FlutterRun <CR>', create_desc '[F]lutter [R]un')
+map('n', '<leader>fd', '<cmd> :FlutterDevices <CR>', create_desc '[F]lutter [R]un')
