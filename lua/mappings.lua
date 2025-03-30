@@ -94,7 +94,11 @@ map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Terminal
+--  _____                   _             _
+-- |_   _|__ _ __ _ __ ___ (_)_ __   __ _| |
+--   | |/ _ \ '__| '_ ` _ \| | '_ \ / _` | |
+--   | |  __/ |  | | | | | | | | | | (_| | |
+--   |_|\___|_|  |_| |_| |_|_|_| |_|\__,_|_|
 -- vim.api.nvim_set_keymap('n', '<leader>f', '<Cmd>lua require("nvterm.terminal").toggle("float")<CR>', {noremap = true, silent = true})
 api_map('n', '<leader>h', '<Cmd>lua require("nvterm.terminal").toggle("horizontal")<CR>', create_desc 'Toggle [H]orizontal terminal')
 api_map('n', '<leader>v', '<Cmd>lua require("nvterm.terminal").toggle("vertical")<CR>', create_desc 'Toggle [V]ertical terminal')
@@ -120,7 +124,11 @@ api_map('n', '<F1>', '<cmd>:w | :!g++ -std=c++17 % && ./a.out<cr>', { noremap = 
 -- |_|  |_|\__,_|_|  |_|\_\__,_|\___/ \_/\_/ |_| |_|
 map('n', '<leader>pv', '<cmd>:Markview splitToggle<CR>', create_desc 'Toggle [P]review [V]iew')
 
--- Code runner
+--   ____          _
+--  / ___|___   __| | ___   _ __ _   _ _ __  _ __   ___ _ __
+-- | |   / _ \ / _` |/ _ \ | '__| | | | '_ \| '_ \ / _ \ '__|
+-- | |__| (_) | (_| |  __/ | |  | |_| | | | | | | |  __/ |
+--  \____\___/ \__,_|\___| |_|   \__,_|_| |_|_| |_|\___|_|
 map('n', '<leader>rr', ':RunCode<CR>', { noremap = true, silent = false })
 map('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
 map('n', '<leader>rft', ':RunFile tab<CR>', { noremap = true, silent = false })
@@ -129,10 +137,34 @@ map('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = false })
 map('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
 map('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
 
--- Copilot
+--   ____            _ _       _
+--  / ___|___  _ __ (_) | ___ | |_
+-- | |   / _ \| '_ \| | |/ _ \| __|
+-- | |__| (_) | |_) | | | (_) | |_
+--  \____\___/| .__/|_|_|\___/ \__|
+--            |_|
 map('n', '<leader>cc', '<cmd> :CopilotChatOpen <CR>', create_desc '[C]opilot [C]hat')
 map('n', '<leader>cm', '<cmd> :CopilotChatModels<CR>', create_desc '[C]opilot [M]odels')
 
--- Flutter
+--  _____ _       _   _
+-- |  ___| |_   _| |_| |_ ___ _ __
+-- | |_  | | | | | __| __/ _ \ '__|
+-- |  _| | | |_| | |_| ||  __/ |
+-- |_|   |_|\__,_|\__|\__\___|_|
 map('n', '<leader>fr', '<cmd> :FlutterRun <CR>', create_desc '[F]lutter [R]un')
 map('n', '<leader>fd', '<cmd> :FlutterDevices <CR>', create_desc '[F]lutter [R]un')
+
+--  _   _           _       _
+-- | | | |_ __   __| | ___ | |_ _ __ ___  ___
+-- | | | | '_ \ / _` |/ _ \| __| '__/ _ \/ _ \
+-- | |_| | | | | (_| | (_) | |_| | |  __/  __/
+--  \___/|_| |_|\__,_|\___/ \__|_|  \___|\___|
+map('n', '<leader>ut', '<cmd> :UndotreeToggle <CR>', create_desc '[U]ndo [T]ree')
+-- Close undotree
+map('n', '<leader>uc', '<cmd> :UndotreeHide <CR>', create_desc '[U]ndo [C]lose')
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'UndotreeHide',
+  callback = function()
+    vim.cmd 'wincmd c'
+  end,
+})

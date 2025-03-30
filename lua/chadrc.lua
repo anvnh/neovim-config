@@ -35,7 +35,7 @@ M.nvdash = {
 M.ui = {
   winblend = 10,
   cmp = {
-    lspkind_text = true,
+    lspkind_text = false,
     style = 'flat_dark', -- default/flat_light/flat_dark/atom/atom_colored
     format_colors = {
       tailwind = false,
@@ -46,17 +46,16 @@ M.ui = {
     theme = 'default', -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = 'default',
+    separator_style = 'arrow',
     order = nil,
-    modules = nil,
+    modules = {},
     overrides = {},
   },
   tabufline = {
     enabled = true,
-    lazyload = true,
     order = { 'treeOffset', 'buffers', 'tabs', 'btns' },
     modules = nil,
-    bufwidth = 30,
+    bufwidth = 13,
   },
   lsp = { signature = true },
   cheatsheet = {

@@ -9,6 +9,18 @@ autocmd('VimLeavePre', {
   command = ':silent !kitty @ set-spacing padding=20 margin=10',
 })
 
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'UndotreeHide',
+  callback = function()
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      local bufname = vim.api.nvim_buf_get_name(buf)
+      if bufname == '[No Name]' then -- Buffer không có tên (No Name)
+        vim.cmd('bdelete! ' .. buf)
+      end
+    end
+  end,
+})
+
 -- Add this to your init.lua or relevant config file
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'markdown',
