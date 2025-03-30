@@ -13,8 +13,8 @@ return {
           size = 12,
         },
         filetype = {
-          python = "python3 -u $fileName; echo 'Press any key to exit...' && read -n 1",
-          java = "javac $fileName && java $fileNameWithoutExt; echo 'Press any key to exit...' && read -n 1",
+          python = 'python3 -u $fileName; read -n 1',
+          java = 'javac $fileName && java $fileNameWithoutExt; read -n 1',
         },
       }
     end,
