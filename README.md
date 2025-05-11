@@ -72,12 +72,20 @@ git clone https://github.com/anvnh/neovim-config.git "${env:LOCALAPPDATA}\nvim"
 </details>
 
 #### Requires dependencies: 
+- [*] [Arch Linux]
 ```sh
 sudo pacman -S $(pacman -Sgq nerd-fonts) && sudo pacman -S $(pacman -Sgq nodejs) && sudo pacman -S npm && sudo pacman -S unzip zip sxiv imagemagick
 ```
 
+- [*] [Fedora]
+You can install required nerd-fonts using [getnf](https://github.com/getnf/getnf)
+```sh
+sudo dnf install nodejs npm unzip zip sxiv ImageMagick 
+```
+
 ## Post installation
-Start Neovim
+
+Start Neovim inside any terminal emulator (e.g., `gnome-terminal`, `konsole`, `kitty`, etc.)
 
 ```sh
 nvim

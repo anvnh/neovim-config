@@ -27,14 +27,10 @@ map('i', '<C-c>', '<ESC>', { noremap = true, silent = true })
 -- Exit terminal mode
 api_map('t', '<C-x>', '<C-\\><C-N>', create_desc 'Exit terminal mode')
 
--- Tab buffer
-map('n', '<Tab>', ':lua require("nvchad.tabufline").next() <CR>', { noremap = true, silent = true })
-map('n', '<S-Tab>', ':lua require("nvchad.tabufline").prev() <CR>', { noremap = true, silent = true })
-map('n', '<leader>x', ':lua require("nvchad.tabufline").close_buffer() <CR>', { noremap = true, silent = true })
--- -- closes all buffers
--- require("nvchad.tabufline").closeAllBufs(true)
--- require("nvchad.tabufline").closeAllBufs(false) -- excludes current buf
--- require("nvchad.tabufline").closeBufs_at_direction("left") -- or right
+-- Tab buffer (im using bufferline.nvim)
+map('n', '<Tab>', '<Cmd> BufferLineCycleNext <CR>', { noremap = true, silent = true })
+map('n', '<S-Tab>', '<Cmd> BufferLineCyclePrev <CR>', { noremap = true, silent = true })
+map('n', '<leader>x', '<Cmd> bdelete <CR>', { noremap = true, silent = true })
 
 -- Window size
 api_map('n', '<C-S-A-Down>', '<Cmd>resize +3<CR>', opts)
@@ -82,8 +78,7 @@ map('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)
 
 map('n', '<leader>lg', '<cmd>FloatermNew lazygit<CR>', create_desc 'Open [L]azy[G]it')
 
--- map('n', '<leader>tt', '<cmd> Themery <CR>', create_desc '[TT]hemery')
-map('n', '<leader>tt', '<cmd> lua require("nvchad.themes").open( { border = false, style = "flat" } ) <CR>', create_desc '[TT]hemery')
+map('n', '<leader>tt', '<cmd> Themery <CR>', create_desc '[TT]hemery')
 
 map('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 map('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
