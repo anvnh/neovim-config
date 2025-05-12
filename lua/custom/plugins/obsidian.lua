@@ -28,7 +28,7 @@ return {
       },
     },
     daily_notes = {
-      folder = '2. Workspace/Daily Notes',
+      folder = 'Workspace/Daily Notes',
       -- date_format = 'YYYY/MMMM/YYYY-MM-DD-dddd',
       date_format = '%Y/%B/%Y-%m-%d-%A',
       template = 'Daily.md',
@@ -38,7 +38,7 @@ return {
       min_chars = 2,
     },
     templates = {
-      folder = '3. Resources/Templates',
+      folder = 'Resources/Templates',
       date_format = '%Y-%m-%d',
       time_format = '%H:%M',
       -- A map for custom variables, the key should be the variable and the value a function

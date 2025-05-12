@@ -1,0 +1,5 @@
+map('n', '<Tab>', '<Cmd> BufferLineCycleNext <CR>', { noremap = true, silent = true })
+map('n', '<S-Tab>', '<Cmd> BufferLineCyclePrev <CR>', { noremap = true, silent = true })
+map('n', '<A-S-j>', '<Cmd> BufferLineMovePrev <CR>', { noremap = true, silent = true })
+map('n', '<A-S-k>', '<Cmd> BufferLineMoveNext <CR>', { noremap = true, silent = true })
+map('n', '<leader>bp', '<Cmd> BufferLineTogglePin <CR>', create_desc 'Toggle [B]uffer [P]in')

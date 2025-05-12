@@ -5,7 +5,7 @@ return {
   config = function()
     require('bufferline').setup {
       options = {
-        numbers = 'ordinal',
+        -- numbers = '',
         separator_style = 'slope',
         middle_mouse_command = 'bdelete! %d',
         -- indicator = {
@@ -13,7 +13,7 @@ return {
         --   icon = '▎',
         -- },
         max_name_length = 20,
-        tab_size = 22,
+        tab_size = 15,
         diagnostics = 'nvim_lsp',
         show_buffer_close_icons = false,
         sort_by = 'insert_after_current',

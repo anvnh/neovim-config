@@ -10,7 +10,9 @@ vim.cmd [[let &t_Cs = "\e[4:3m]"]]
 vim.cmd [[let &t_Ce = "\e[4:0m]"]]
 
 -- Set up conceallevel to 1 or 2 in order to make obsidian nvim work
+-- vim.opt.conceallevel = 1
 opt.conceallevel = 1
+opt.foldmethod = 'marker'
 
 opt.expandtab = true
 opt.tabstop = 4

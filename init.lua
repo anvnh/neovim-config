@@ -89,6 +89,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 require 'options'
 require 'mappings'
+require 'globals'
+-- require 'custom.keymaps.init'
 require('lazy').setup({
   'tpope/vim-sleuth',
   {
@@ -499,7 +501,7 @@ require('lazy').setup({
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
-      autotag = { enable = true },
+      -- autotag = { enable = true },
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
