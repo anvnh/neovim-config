@@ -1,6 +1,6 @@
 require 'custom.keymaps.generals'
 
-require 'custom.keymaps.bufferline'
+require 'custom.keymaps.nvchad'
 
 require 'custom.keymaps.nvimtree'
 require 'custom.keymaps.tmux'
