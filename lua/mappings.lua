@@ -1,5 +1,7 @@
 require 'custom.keymaps.generals'
-require 'custom.keymaps.barbar'
+
+require 'custom.keymaps.bufferline'
+
 require 'custom.keymaps.nvimtree'
 require 'custom.keymaps.tmux'
 require 'custom.keymaps.move'
