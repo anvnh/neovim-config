@@ -28,7 +28,12 @@ External Requirements:
   - If you want to write Typescript, you need `npm`
   - If you want to write Golang, you will need `go`
   - etc...
+>[!note]
+> On Fedora, you may need to install lua 5.1 in order to install and use luarock plugins (in /lua/custom/plugins/image.lua)
 
+```sh
+sudo dnf install lua-5.1
+```
 
 > **NOTE**
 > [Backup](#FAQ) your previous configuration (if any exists)
