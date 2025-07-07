@@ -1,0 +1,11 @@
+-- require 'globals'
+-- vim.keymap.set({ 'n', 'i' }, '<leader>co', function()
+--   local line = vim.api.nvim_get_current_line()
+--   local modified_line = line:gsub('(- %[)(.)(%])', function(prefix, checkbox, postfix)
+--     checkbox = (checkbox == ' ') and 'x' or ' '
+--     return prefix .. checkbox .. postfix
+--   end)
+--   vim.api.nvim_set_current_line(modified_line)
+-- end, create_desc 'Toggle checkbox')
+--
+vim.keymap.set('n', '<leader>co', ":lua require('toggle-checkbox').toggle()<CR>", { desc = 'Toggle checkbox' })
