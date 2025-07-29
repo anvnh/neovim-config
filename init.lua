@@ -1,3 +1,10 @@
+-- Hiển thị lỗi khi cursor dừng ở dòng bị lỗi
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false })
+  end,
+})
+
 local autocmd = vim.api.nvim_create_autocmd
 
 -- NOTE: Dynamic terminal padding
