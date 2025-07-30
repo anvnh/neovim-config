@@ -1,5 +1,5 @@
--- Hiển thị lỗi khi cursor dừng ở dòng bị lỗi
-vim.api.nvim_create_autocmd("CursorHold", {
+-- NOTE: Display error messages in a floating window
+vim.api.nvim_create_autocmd('CursorHold', {
   callback = function()
     vim.diagnostic.open_float(nil, { focus = false })
   end,
@@ -53,19 +53,6 @@ autocmd('BufReadPost', {
   end,
 })
 
---NOTE: Show NvDash when all buffers are closed
--- vim.api.nvim_create_autocmd('BufDelete', {
---   callback = function()
---     local bufs = vim.t.bufs
---     if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == '' then
---       vim.cmd 'Nvdash'
---     end
---   end,
--- })
-
--- NOTE: Setting up base46 for NvUI
-vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'
-
 -- NOTE: :W and :w are the same
 vim.api.nvim_create_user_command('W', 'w', {})
 
@@ -113,12 +100,8 @@ require('lazy').setup({
     },
   },
   {
-    'f-person/git-blame.nvim',
-  },
-  {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    -- branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
@@ -129,7 +112,10 @@ require('lazy').setup({
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      {
+        'nvim-tree/nvim-web-devicons',
+        enabled = vim.g.have_nerd_font,
+      },
     },
     config = function()
       require('telescope').setup {
