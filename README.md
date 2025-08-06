@@ -77,12 +77,17 @@ git clone https://github.com/anvnh/neovim-config.git "${env:LOCALAPPDATA}\nvim"
 </details>
 
 #### Requires dependencies: 
-- [*] [Arch Linux]
+##### Arch Linux
+- Nerd fonts
 ```sh
-sudo pacman -S $(pacman -Sgq nerd-fonts) && sudo pacman -S $(pacman -Sgq nodejs) && sudo pacman -S npm && sudo pacman -S unzip zip sxiv imagemagick
+sudo pacman -S $(pacman -Sgq nerd-fonts)
+```
+- Dependencies for tree-sitter
+```sh
+sudo pacman -Sy nodejs npm unzip zip sxiv imagemagick
 ```
 
-- [*] [Fedora]
+##### Fedora
 You can install required nerd-fonts using [getnf](https://github.com/getnf/getnf)
 ```sh
 sudo dnf install nodejs npm unzip zip sxiv ImageMagick 
