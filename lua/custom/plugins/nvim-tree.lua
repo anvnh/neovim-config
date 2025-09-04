@@ -4,7 +4,7 @@ return {
     require('nvim-tree').setup {
       git = {
         enable = true,
-        ignore = true,
+        ignore = false,
       },
       filters = {
         dotfiles = false, -- Optional: show dotfiles like .gitignore

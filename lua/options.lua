@@ -14,6 +14,10 @@ vim.cmd [[let &t_Ce = "\e[4:0m]"]]
 opt.conceallevel = 1
 opt.foldmethod = 'marker'
 
+g.editorconfig = true
+
+opt.exrc = true
+opt.secure = true
 opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
